@@ -1,0 +1,262 @@
+﻿C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Inc\stm32h7xx_it.h:63:void UART7_IRQHandler(void);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Inc\usart.h:35:extern UART_HandleTypeDef huart7;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Inc\usart.h:43:void MX_UART7_Init(void);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\main.c:98:  MX_UART7_Init();
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:60:extern DMA_HandleTypeDef hdma_uart7_rx;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:63:extern UART_HandleTypeDef huart7;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:205:  HAL_DMA_IRQHandler(&hdma_uart7_rx);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:283:  * @brief This function handles UART7 global interrupt.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:285:void UART7_IRQHandler(void)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:287:  /* USER CODE BEGIN UART7_IRQn 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:289:  /* USER CODE END UART7_IRQn 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:290:  HAL_UART_IRQHandler(&huart7);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:291:  /* USER CODE BEGIN UART7_IRQn 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\stm32h7xx_it.c:293:  /* USER CODE END UART7_IRQn 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:27:UART_HandleTypeDef huart7;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:29:DMA_HandleTypeDef hdma_uart7_rx;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:33:/* UART7 init function */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:34:void MX_UART7_Init(void)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:37:  /* USER CODE BEGIN UART7_Init 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:39:  /* USER CODE END UART7_Init 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:41:  /* USER CODE BEGIN UART7_Init 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:43:  /* USER CODE END UART7_Init 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:44:  huart7.Instance = UART7;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:45:  huart7.Init.BaudRate = 115200;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:46:  huart7.Init.WordLength = UART_WORDLENGTH_8B;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:47:  huart7.Init.StopBits = UART_STOPBITS_1;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:48:  huart7.Init.Parity = UART_PARITY_NONE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:49:  huart7.Init.Mode = UART_MODE_TX_RX;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:50:  huart7.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:51:  huart7.Init.OverSampling = UART_OVERSAMPLING_16;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:52:  huart7.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:53:  huart7.Init.ClockPrescaler = UART_PRESCALER_DIV1;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:54:  huart7.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:55:  if (HAL_UART_Init(&huart7) != HAL_OK)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:59:  if (HAL_UARTEx_SetTxFifoThreshold(&huart7, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:63:  if (HAL_UARTEx_SetRxFifoThreshold(&huart7, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:67:  if (HAL_UARTEx_DisableFifoMode(&huart7) != HAL_OK)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:71:  /* USER CODE BEGIN UART7_Init 2 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:73:  /* USER CODE END UART7_Init 2 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:126:  if(uartHandle->Instance==UART7)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:128:  /* USER CODE BEGIN UART7_MspInit 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:130:  /* USER CODE END UART7_MspInit 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:134:    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_UART7;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:141:    /* UART7 clock enable */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:142:    __HAL_RCC_UART7_CLK_ENABLE();
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:145:    /**UART7 GPIO Configuration
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:146:    PE7     ------> UART7_RX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:147:    PE8     ------> UART7_TX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:153:    GPIO_InitStruct.Alternate = GPIO_AF7_UART7;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:156:    /* UART7 DMA Init */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:157:    /* UART7_RX Init */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:158:    hdma_uart7_rx.Instance = DMA1_Stream2;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:159:    hdma_uart7_rx.Init.Request = DMA_REQUEST_UART7_RX;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:160:    hdma_uart7_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:161:    hdma_uart7_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:162:    hdma_uart7_rx.Init.MemInc = DMA_MINC_ENABLE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:163:    hdma_uart7_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:164:    hdma_uart7_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:165:    hdma_uart7_rx.Init.Mode = DMA_NORMAL;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:166:    hdma_uart7_rx.Init.Priority = DMA_PRIORITY_LOW;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:167:    hdma_uart7_rx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:168:    if (HAL_DMA_Init(&hdma_uart7_rx) != HAL_OK)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:173:    __HAL_LINKDMA(uartHandle,hdmarx,hdma_uart7_rx);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:175:    /* UART7 interrupt Init */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:176:    HAL_NVIC_SetPriority(UART7_IRQn, 5, 0);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:177:    HAL_NVIC_EnableIRQ(UART7_IRQn);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:178:  /* USER CODE BEGIN UART7_MspInit 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:180:  /* USER CODE END UART7_MspInit 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:262:  if(uartHandle->Instance==UART7)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:264:  /* USER CODE BEGIN UART7_MspDeInit 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:266:  /* USER CODE END UART7_MspDeInit 0 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:268:    __HAL_RCC_UART7_CLK_DISABLE();
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:270:    /**UART7 GPIO Configuration
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:271:    PE7     ------> UART7_RX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:272:    PE8     ------> UART7_TX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:276:    /* UART7 DMA DeInit */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:279:    /* UART7 interrupt Deinit */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:280:    HAL_NVIC_DisableIRQ(UART7_IRQn);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:281:  /* USER CODE BEGIN UART7_MspDeInit 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Core\Src\usart.c:283:  /* USER CODE END UART7_MspDeInit 1 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:137:  UART7_IRQn                  = 82,     /*!< UART7 global interrupt                                            */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:2208:#define UART7_BASE            (D2_APB1PERIPH_BASE + 0x7800UL)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:2443:#define UART7               ((USART_TypeDef *) UART7_BASE)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:15533:#define RCC_APB1LENR_UART7EN_Pos               (30U)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:15534:#define RCC_APB1LENR_UART7EN_Msk               (0x1UL << RCC_APB1LENR_UART7EN_Pos) /*!< 0x40000000 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:15535:#define RCC_APB1LENR_UART7EN                   RCC_APB1LENR_UART7EN_Msk
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:15825:#define RCC_APB1LRSTR_UART7RST_Pos             (30U)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:15826:#define RCC_APB1LRSTR_UART7RST_Msk             (0x1UL << RCC_APB1LRSTR_UART7RST_Pos) /*!< 0x40000000 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:15827:#define RCC_APB1LRSTR_UART7RST                 RCC_APB1LRSTR_UART7RST_Msk
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:16231:#define RCC_APB1LLPENR_UART7LPEN_Pos           (30U)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:16232:#define RCC_APB1LLPENR_UART7LPEN_Msk           (0x1UL << RCC_APB1LLPENR_UART7LPEN_Pos) /*!< 0x40000000 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:16233:#define RCC_APB1LLPENR_UART7LPEN               RCC_APB1LLPENR_UART7LPEN_Msk
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26502:                                    ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26512:                                         ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26522:                                                            ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26532:                                                  ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26543:                                               ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26554:                                           ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26565:                                        ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26575:                                                    ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h:26586:                                    ((INSTANCE) == UART7)  || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3195:#define __USART7_CLK_DISABLE        __HAL_RCC_UART7_CLK_DISABLE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3196:#define __USART7_CLK_ENABLE         __HAL_RCC_UART7_CLK_ENABLE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3197:#define __USART7_FORCE_RESET        __HAL_RCC_UART7_FORCE_RESET
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3198:#define __USART7_RELEASE_RESET      __HAL_RCC_UART7_RELEASE_RESET
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3355:#define __UART7_CLK_ENABLE          __HAL_RCC_UART7_CLK_ENABLE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3356:#define __UART7_CLK_DISABLE          __HAL_RCC_UART7_CLK_DISABLE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3357:#define __UART7_RELEASE_RESET       __HAL_RCC_UART7_RELEASE_RESET
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3358:#define __UART7_FORCE_RESET       __HAL_RCC_UART7_FORCE_RESET
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3359:#define __UART7_CLK_SLEEP_ENABLE  __HAL_RCC_UART7_CLK_SLEEP_ENABLE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h:3360:#define __UART7_CLK_SLEEP_DISABLE  __HAL_RCC_UART7_CLK_SLEEP_DISABLE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma.h:322:#define DMA_REQUEST_UART7_RX         79U  /*!< DMAMUX1 UART7 RX request  */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma.h:323:#define DMA_REQUEST_UART7_TX         80U  /*!< DMAMUX1 UART7 TX request  */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio_ex.h:200:#define GPIO_AF7_UART7         ((uint8_t)0x07)  /* UART7 Alternate Function mapping  */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio_ex.h:279:#define GPIO_AF11_UART7         ((uint8_t)0x0B)  /* UART7 Alternate Function mapping   */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:1956:#define __HAL_RCC_UART7_CLK_ENABLE()   do { \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:1958:                                        SET_BIT(RCC->APB1LENR, RCC_APB1LENR_UART7EN);\
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:1960:                                        tmpreg = READ_BIT(RCC->APB1LENR, RCC_APB1LENR_UART7EN);\
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:2062:#define __HAL_RCC_UART7_CLK_DISABLE()          (RCC->APB1LENR) &= ~ (RCC_APB1LENR_UART7EN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:2111:#define __HAL_RCC_UART7_IS_CLK_ENABLED()           ((RCC->APB1LENR & RCC_APB1LENR_UART7EN)   != 0U)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:2153:#define __HAL_RCC_UART7_IS_CLK_DISABLED()          ((RCC->APB1LENR & RCC_APB1LENR_UART7EN)   == 0U)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:3280:#define __HAL_RCC_C1_UART7_CLK_ENABLE()   do { \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:3282:                                        SET_BIT(RCC_C1->APB1LENR, RCC_APB1LENR_UART7EN);\
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:3284:                                        tmpreg = READ_BIT(RCC_C1->APB1LENR, RCC_APB1LENR_UART7EN);\
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:3360:#define __HAL_RCC_C1_UART7_CLK_DISABLE()         (RCC_C1->APB1LENR) &= ~ (RCC_APB1LENR_UART7EN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:4310:#define __HAL_RCC_C2_UART7_CLK_ENABLE()   do { \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:4312:                                        SET_BIT(RCC_C2->APB1LENR, RCC_APB1LENR_UART7EN);\
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:4314:                                        tmpreg = READ_BIT(RCC_C2->APB1LENR, RCC_APB1LENR_UART7EN);\
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:4390:#define __HAL_RCC_C2_UART7_CLK_DISABLE()         (RCC_C2->APB1LENR) &= ~ (RCC_APB1LENR_UART7EN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:4933:#define __HAL_RCC_APB1L_FORCE_RESET()          (RCC->APB1LRSTR = 0xE8FFC3FFU) /* Resets TIM2..TIM7, TIM12..TIM14, LPTIM1, SPI2, SPI3, SPDIFRX, USART2, USART3, UART4, UART5, I2C1..I2C3, CEC, DAC1(2), UART7 and UART8 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:4935:#define __HAL_RCC_APB1L_FORCE_RESET()          (RCC->APB1LRSTR = 0xEAFFC3FFU) /* Resets TIM2..TIM7, TIM12..TIM14, LPTIM1, SPI2, SPI3, SPDIFRX, USART2, USART3, UART4, UART5, I2C1..I2C3, I2C5, CEC, DAC12, UART7 and UART8 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:4967:#define __HAL_RCC_UART7_FORCE_RESET()          (RCC->APB1LRSTR) |= (RCC_APB1LRSTR_UART7RST)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:5008:#define __HAL_RCC_UART7_RELEASE_RESET()          (RCC->APB1LRSTR) &= ~ (RCC_APB1LRSTR_UART7RST)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:5851:#define __HAL_RCC_UART7_CLK_SLEEP_ENABLE()          (RCC->APB1LLPENR) |= (RCC_APB1LLPENR_UART7LPEN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:5896:#define __HAL_RCC_UART7_CLK_SLEEP_DISABLE()          (RCC->APB1LLPENR) &= ~ (RCC_APB1LLPENR_UART7LPEN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:5946:#define __HAL_RCC_UART7_IS_CLK_SLEEP_ENABLED()           ((RCC->APB1LLPENR & (RCC_APB1LLPENR_UART7LPEN))   != 0U)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:5988:#define __HAL_RCC_UART7_IS_CLK_SLEEP_DISABLED()          ((RCC->APB1LLPENR & (RCC_APB1LLPENR_UART7LPEN))   == 0U)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:6441:#define __HAL_RCC_C1_UART7_CLK_SLEEP_ENABLE()          (RCC_C1->APB1LLPENR) |= (RCC_APB1LLPENR_UART7LPEN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:6473:#define __HAL_RCC_C1_UART7_CLK_SLEEP_DISABLE()          (RCC_C1->APB1LLPENR) &= ~ (RCC_APB1LLPENR_UART7LPEN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:6737:#define __HAL_RCC_C2_UART7_CLK_SLEEP_ENABLE()          (RCC_C2->APB1LLPENR) |= (RCC_APB1LLPENR_UART7LPEN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h:6769:#define __HAL_RCC_C2_UART7_CLK_SLEEP_DISABLE()          (RCC_C2->APB1LLPENR) &= ~ (RCC_APB1LLPENR_UART7LPEN)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:372:#define RCC_PERIPHCLK_UART7            RCC_PERIPHCLK_USART234578
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:730:/** @defgroup RCCEx_UART7_Clock_Source  RCCEx UART7 Clock Source
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:733:#define RCC_UART7CLKSOURCE_D2PCLK1   RCC_USART234578CLKSOURCE_D2PCLK1
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:734:#define RCC_UART7CLKSOURCE_PLL2      RCC_USART234578CLKSOURCE_PLL2
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:735:#define RCC_UART7CLKSOURCE_PLL3      RCC_USART234578CLKSOURCE_PLL3
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:736:#define RCC_UART7CLKSOURCE_HSI       RCC_USART234578CLKSOURCE_HSI
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:737:#define RCC_UART7CLKSOURCE_CSI       RCC_USART234578CLKSOURCE_CSI
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:738:#define RCC_UART7CLKSOURCE_LSE       RCC_USART234578CLKSOURCE_LSE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2670:/** @brief macro to configure the UART5 clock (UART7CLK).
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2672:  * @param  __UART7CLKSource__ specifies the UART7 clock source.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2674:  *            @arg RCC_UART7CLKSOURCE_D2PCLK1: APB1 Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2675:  *            @arg RCC_UART7CLKSOURCE_PLL2: PLL2_Q Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2676:  *            @arg RCC_UART7CLKSOURCE_PLL3: PLL3_Q Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2677:  *            @arg RCC_UART7CLKSOURCE_HSI: HSI selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2678:  *            @arg RCC_UART7CLKSOURCE_CSI: CSI Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2679:  *            @arg RCC_UART7CLKSOURCE_LSE: LSE selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2681:#define __HAL_RCC_UART7_CONFIG  __HAL_RCC_USART234578_CONFIG
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2683:/** @brief  macro to get the UART7 clock source.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2685:  *            @arg RCC_UART7CLKSOURCE_D2PCLK1: APB1 Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2686:  *            @arg RCC_UART7CLKSOURCE_PLL2: PLL2_Q Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2687:  *            @arg RCC_UART7CLKSOURCE_PLL3: PLL3_Q Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2688:  *            @arg RCC_UART7CLKSOURCE_HSI: HSI selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2689:  *            @arg RCC_UART7CLKSOURCE_CSI: CSI Clock selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2690:  *            @arg RCC_UART7CLKSOURCE_LSE: LSE selected as UART7 clock
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:2692:#define __HAL_RCC_GET_UART7_SOURCE  __HAL_RCC_GET_USART234578_SOURCE
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:4051:#define IS_RCC_UART7CLKSOURCE(SOURCE)  (((SOURCE) == RCC_UART7CLKSOURCE_D2PCLK1) || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:4052:                                        ((SOURCE) == RCC_UART7CLKSOURCE_PLL2)    || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:4053:                                        ((SOURCE) == RCC_UART7CLKSOURCE_PLL3)    || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:4054:                                        ((SOURCE) == RCC_UART7CLKSOURCE_CSI)     || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:4055:                                        ((SOURCE) == RCC_UART7CLKSOURCE_LSE)     || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h:4056:                                        ((SOURCE) == RCC_UART7CLKSOURCE_HSI))
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1155:  *         without need to call HAL_UART_Init() function.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1159:  *           - UART instance should have already been initialised (through call of HAL_UART_Init() )
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1174:  *         without need to call HAL_UART_Init() function.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1178:  *           - UART instance should have already been initialised (through call of HAL_UART_Init() )
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1193:  *         without need to call HAL_UART_Init() function.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1197:  *           - UART instance should have already been initialised (through call of HAL_UART_Init() )
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1212:  *         without need to call HAL_UART_Init() function.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1216:  *           - UART instance should have already been initialised (through call of HAL_UART_Init() )
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h:1609:HAL_StatusTypeDef HAL_UART_Init(UART_HandleTypeDef *huart);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:367:    else if((__HANDLE__)->Instance == UART7)                  \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:369:      switch(__HAL_RCC_GET_UART7_SOURCE())                    \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:371:        case RCC_UART7CLKSOURCE_D2PCLK1:                      \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:374:        case RCC_UART7CLKSOURCE_PLL2:                         \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:377:        case RCC_UART7CLKSOURCE_PLL3:                         \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:380:        case RCC_UART7CLKSOURCE_HSI:                          \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:383:        case RCC_UART7CLKSOURCE_CSI:                          \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:386:        case RCC_UART7CLKSOURCE_LSE:                          \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:672:    else if((__HANDLE__)->Instance == UART7)                  \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:674:      switch(__HAL_RCC_GET_UART7_SOURCE())                    \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:676:        case RCC_UART7CLKSOURCE_D2PCLK1:                      \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:679:        case RCC_UART7CLKSOURCE_PLL2:                         \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:682:        case RCC_UART7CLKSOURCE_PLL3:                         \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:685:        case RCC_UART7CLKSOURCE_HSI:                          \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:688:        case RCC_UART7CLKSOURCE_CSI:                          \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h:691:        case RCC_UART7CLKSOURCE_LSE:                          \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:290:#define LL_APB1_GRP1_PERIPH_UART7          RCC_APB1LENR_UART7EN
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:1829:  *         APB1LENR     UART7EN       LL_APB1_GRP1_EnableClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:1856:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:1897:  *         APB1LENR     UART7EN       LL_APB1_GRP1_IsEnabledClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:1924:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:1961:  *         APB1LENR     UART7EN       LL_APB1_GRP1_DisableClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:1988:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2024:  *         APB1LRSTR    UART7RST      LL_APB1_GRP1_ForceReset\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2050:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2086:  *         APB1LRSTR    UART7RST      LL_APB1_GRP1_ReleaseReset\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2112:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2149:  *         APB1LLPENR   UART7LPEN     LL_APB1_GRP1_EnableClockSleep\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2176:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2217:  *         APB1LLPENR   UART7LPEN     LL_APB1_GRP1_DisableClockSleep\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:2244:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4286:  *         APB1LENR     UART7EN       LL_C1_APB1_GRP1_EnableClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4312:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4352:  *         APB1LENR     UART7EN       LL_C1_APB1_GRP1_IsEnabledClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4378:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4414:  *         APB1LENR     UART7EN       LL_C1_APB1_GRP1_DisableClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4440:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4476:  *         APB1LLPENR   UART7LPEN     LL_C1_APB1_GRP1_EnableClockSleep\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4502:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4542:  *         APB1LLPENR   UART7LPEN     LL_C1_APB1_GRP1_DisableClockSleep\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:4568:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6044:  *         APB1LENR     UART7EN       LL_C2_APB1_GRP1_EnableClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6070:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6110:  *         APB1LENR     UART7EN       LL_C2_APB1_GRP1_IsEnabledClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6136:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6172:  *         APB1LENR     UART7EN       LL_C2_APB1_GRP1_DisableClock\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6198:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6234:  *         APB1LLPENR   UART7LPEN     LL_C2_APB1_GRP1_EnableClockSleep\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6260:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6300:  *         APB1LLPENR   UART7LPEN     LL_C2_APB1_GRP1_DisableClockSleep\n
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_bus.h:6326:  *         @arg @ref LL_APB1_GRP1_PERIPH_UART7
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dma.h:1175:  *         @arg @ref LL_DMAMUX1_REQ_UART7_RX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dma.h:1176:  *         @arg @ref LL_DMAMUX1_REQ_UART7_TX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dma.h:1337:  *         @arg @ref LL_DMAMUX1_REQ_UART7_RX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dma.h:1338:  *         @arg @ref LL_DMAMUX1_REQ_UART7_TX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dmamux.h:231:#define LL_DMAMUX1_REQ_UART7_RX         79U  /*!< DMAMUX1 UART7 RX request        */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dmamux.h:232:#define LL_DMAMUX1_REQ_UART7_TX         80U  /*!< DMAMUX1 UART7 TX request        */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dmamux.h:646:  *         @arg @ref LL_DMAMUX1_REQ_UART7_RX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dmamux.h:647:  *         @arg @ref LL_DMAMUX1_REQ_UART7_TX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dmamux.h:839:  *         @arg @ref LL_DMAMUX1_REQ_UART7_RX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_dmamux.h:840:  *         @arg @ref LL_DMAMUX1_REQ_UART7_TX
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_usart.h:35: || defined(UART4) || defined(UART5) || defined(UART7) || defined(UART8) || defined(UART9) || defined(USART10)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_usart.h:4389:#endif /* USART1 || USART2 || USART3 || USART6 || UART4 || UART5 || UART7 || UART8 || UART9 || USART10 */
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c:158:                                                 (((__REQUEST__) >= DMA_REQUEST_UART7_RX)  &&  ((__REQUEST__) <= DMA_REQUEST_UART8_TX )) || \
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c:164:                                                 (((__REQUEST__) >= DMA_REQUEST_UART7_RX)  &&  ((__REQUEST__) <= DMA_REQUEST_UART8_TX )))
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:63:        the HAL_UART_Init() API.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:78:    (@) These API's (HAL_UART_Init(), HAL_HalfDuplex_Init(), HAL_LIN_Init(), HAL_MultiProcessor_Init(),
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:133:    By default, after the HAL_UART_Init() and when the state is HAL_UART_STATE_RESET
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:137:    reset to the legacy weak functions in the HAL_UART_Init()
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:139:    If not, MspInit or MspDeInit are not null, the HAL_UART_Init() and HAL_UART_DeInit()
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:149:    or HAL_UART_Init() function.
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:270:    The HAL_UART_Init(), HAL_HalfDuplex_Init(), HAL_LIN_Init()and HAL_MultiProcessor_Init()API
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:307:HAL_StatusTypeDef HAL_UART_Init(UART_HandleTypeDef *huart)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:708:  * @note   The HAL_UART_RegisterCallback() may be called before HAL_UART_Init(), HAL_HalfDuplex_Init(),
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c:837:  * @note   The HAL_UART_UnRegisterCallback() may be called before HAL_UART_Init(), HAL_HalfDuplex_Init(),
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\MyTask\Task_Init.c:53:static volatile uint8_t uart7_rx_byte = 0;
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\MyTask\Task_Init.c:68:	// UART7 ���ճ�ʼ��
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\MyTask\Task_Init.c:69:	HAL_UART_Receive_IT(&huart7, &uart7_rx_byte, 1);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\MyTask\Task_Init.c:345:    if (huart->Instance == UART7)
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\MyTask\Task_Init.c:347:        HitTask_Uart4RxProcessByte(uart7_rx_byte);
+C:\Users\lenovo\Desktop\fire_h7\fire_h7\fire_h77\MyTask\Task_Init.c:348:        HAL_UART_Receive_IT(&huart7, &uart7_rx_byte, 1);
