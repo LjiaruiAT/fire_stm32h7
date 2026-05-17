@@ -1,4 +1,45 @@
 #include "Task_Init.h"
+#include <math.h>
+#define inv_tor 0.4
+#define PI_F 3.14159265358979323846f
+#define TWO_PI_F (2.0f * PI_F)
+float unitree_F = 0;
+float unitree_S = 0;
+float unitree_T = 0;
+float real_angle = 0;
+static float twenty_to_real_pai(float angle)
+{
+	float temp = angle / 6.369426;
+	return temp;
+	
+	
+}
+static float NormalizeAngleRad(float angle)
+{
+    float value = fmodf(angle, TWO_PI_F);
+    if (value < 0.0f)
+    {
+        value += TWO_PI_F;
+    }
+    return value;
+}
+
+static float GravityCompensatedTorque360(float angle_current,
+                                         float angle_down,
+                                         float torque_max)
+{
+    float diff = NormalizeAngleRad(angle_current - angle_down);
+    if (diff > PI_F)
+    {
+        diff -= TWO_PI_F;
+    }
+    else if (diff < -PI_F)
+    {
+        diff += TWO_PI_F;
+    }
+
+    return torque_max * sinf(diff);
+}
 
 typedef struct
 {
@@ -10,24 +51,23 @@ typedef struct
 } exp_param;
 
 typedef struct {
-    GO_MotorHandle_t motor;    /**< 电机句柄（包含 ID、RS485 总线指针等） */
-    float pos_offset;          /**< 角度零点偏移量 (rad)，用于校准机械安装误差 */
-    float inv_motor;           /**< 电机方向标志：1-正转，-1-反转 */
-    float exp_rad;             /**< 期望角度 (rad) */
-    float exp_omega;           /**< 期望角速度 (rad/s) */
-    float exp_torque;          /**< 期望力矩 (N·m) */
-    float Kp;                  /**< 位置环比例增益 */
-    float Kd;                  /**< 位置环微分增益 */
+    GO_MotorHandle_t motor; 
+    float pos_offset;         
+    float inv_motor;         
+    float exp_rad;           
+    float exp_omega;          
+    float exp_torque;         
+    float Kp;                 
+    float Kd;                
 } Joint_t;
 
 typedef enum {
-    BALL_IDLE = 0,   // 等待触发
-    BALL_PREPARE,    // 准备阶段
-    BALL_HIT,        // 击球阶段
-    BALL_RESET       // 复位阶段
+    BALL_IDLE = 0,   
+    BALL_PREPARE,   
+    BALL_HIT,        
+    BALL_RESET       
 } BallState_t;
 
-/* ---- 全局变量 ---- */
 RS485_t rs485bus;
 uint8_t dma1_send_buf[sizeof(GOMotor_SendPack_t)];
 uint8_t dma1_recv_buf[sizeof(GOMotor_ReceivePack_t)];
@@ -35,23 +75,24 @@ Motor3508Ex_t Lift_Motor;
 Joint_t let_fly = {.motor = {.motor_id = 0x01, .rs485 = &rs485bus}};
 TaskHandle_t Hit_Task_Handle;
 
-float unitree_F = 0;
-float unitree_S = 0;
-float unitree_T = 0;
-float unitree_inv_back  = 12.00f;
-float unitree_inv_front = 18.00f;
-char  init_done = 0;
 
+float balance_rad = 0;
+float unitree_inv_back  = 20.00f;
+float unitree_inv_front = 18.00f;
+float balance_inv = 0.0f;
+char  init_done = 0;
+float max_vel = -300;
 int      ret       = 0;
 uint32_t error_cnt = 0;
 uint32_t success_cnt = 0;
 
 CubicParam_t     cubic;
 TrajectoryState_t state;
-
-/* UART7 DMA 接收缓冲区（蓝牙帧协议：0xAA [CMD] 0x55） */
+float kkp = 0;
+float kkd = 0;
 static uint8_t uart7_dma_buf[64];
 uint8_t bt_cmd = 0;
+float test_angle = 0;
 
 /* ---- Task_Init ---- */
 void Task_Init(void)
@@ -59,7 +100,6 @@ void Task_Init(void)
     RS485Init(&rs485bus, &huart2, NULL, NULL, dma1_send_buf, dma1_recv_buf);
 
     HAL_UARTEx_ReceiveToIdle_DMA(&huart7, uart7_dma_buf, sizeof(uart7_dma_buf));
-    /* 关闭半传输中断，避免帧未完成时触发回调 */
     __HAL_DMA_DISABLE_IT(huart7.hdmarx, DMA_IT_HT);
 
     xTaskCreate(Hit_Task,
@@ -69,14 +109,15 @@ void Task_Init(void)
                 4,
                 &Hit_Task_Handle);
 }
-
+float ini_rad = 0;
 void Hit_Task(void *pvParameters)
 {
     TickType_t last_wake  = xTaskGetTickCount();
     BallState_t ball_state = BALL_IDLE;
     TickType_t state_start = last_wake;
-
-    let_fly.exp_torque = -0.42f;
+let_fly.Kp = 4.0f;
+	let_fly.Kd =0.2f;
+    let_fly.exp_torque = 0.4f;
 
     char rad_init_done  = 0;
     char cubic_generated = 0;
@@ -84,19 +125,31 @@ void Hit_Task(void *pvParameters)
     while (1)
     {
         TickType_t now = xTaskGetTickCount();
+			
+if (init_done == 0)
+{
+			  GoMotorSend(&let_fly.motor,
+                                0,
+                                state.vel,
+                                test_angle,
+                                0,
+                                0);
+						            ret = GoMotorRecv(&let_fly.motor);
 
+							 ret = GoMotorRecv(&let_fly.motor);
+}
         if (!rad_init_done)
         {
-            GoMotorSend(&let_fly.motor, 0, 0, 0, 0, 0);
-            ret = GoMotorRecv(&let_fly.motor);
-
             unitree_F = let_fly.motor.state.rad;
-            unitree_S = unitree_F + unitree_inv_back;   // 准备阶段角度
-            unitree_T = unitree_F - unitree_inv_front;  // 击球角度
-
+            unitree_S = unitree_F + unitree_inv_back;   
+            unitree_T = unitree_F - unitree_inv_front; 
+            ini_rad =	twenty_to_real_pai(let_fly.motor.state.rad);
             rad_init_done = 1;
         }
-
+				real_angle = twenty_to_real_pai(let_fly.motor.state.rad);
+        let_fly.exp_torque = GravityCompensatedTorque360(real_angle,
+                                                        ini_rad,
+                                                        inv_tor);
         switch (ball_state)
         {
             case BALL_IDLE:
@@ -111,7 +164,8 @@ void Hit_Task(void *pvParameters)
             case BALL_PREPARE:
                 if ((now - state_start) < pdMS_TO_TICKS(500))
                 {
-                    GoMotorSend(&let_fly.motor, 0, 0, unitree_S, 4, 0.1f);
+                    GoMotorSend(&let_fly.motor, let_fly.exp_torque, 0, unitree_S, let_fly.Kp, let_fly.Kd);
+									ret = GoMotorRecv(&let_fly.motor);
                 }
                 else
                 {
@@ -121,23 +175,37 @@ void Hit_Task(void *pvParameters)
                 break;
 
             case BALL_HIT:
-                if (!cubic_generated)
+//							if (!cubic_generated)
+//							{
+//									Cubic_SetTrajectory(&cubic,
+//																			let_fly.motor.state.rad, 0.0f,
+//																			unitree_T, 0.0f,
+//																			0.08f, HAL_GetTick());
+//									cubic_generated = 1;
+//							}
+						
+                if ((now - state_start) < pdMS_TO_TICKS(1000))
                 {
-                    Cubic_SetTrajectory(&cubic,
-                                        let_fly.motor.state.rad, 0.0f,
-                                        unitree_T, 0.0f,
-                                        0.1f, HAL_GetTick());
-                    cubic_generated = 1;
-                }
-                if ((now - state_start) < pdMS_TO_TICKS(300))
-                {
-                    Cubic_GetFullState(&cubic, HAL_GetTick(), &state);
-                    GoMotorSend(&let_fly.motor,
-                                let_fly.exp_torque,
-                                state.vel,
-                                state.pos,
-                                5,
-                                0.1f);
+//                    Cubic_GetFullState(&cubic, HAL_GetTick(), &state);
+//                    GoMotorSend(&let_fly.motor,
+//                                let_fly.exp_torque,
+//                                state.vel,
+//                                state.pos,
+//                                let_fly.Kp,
+//                                let_fly.Kd);
+									
+									
+                                    if (let_fly.motor.state.rad > unitree_T)
+									{
+										GoMotorSend(&let_fly.motor,let_fly.exp_torque,max_vel,unitree_T,8,0);
+																				ret = GoMotorRecv(&let_fly.motor);
+
+									}
+									else{
+									GoMotorSend(&let_fly.motor,let_fly.exp_torque,0,unitree_T,4,0.1);
+																		ret = GoMotorRecv(&let_fly.motor);
+
+									}
                 }
                 else
                 {
@@ -149,13 +217,15 @@ void Hit_Task(void *pvParameters)
             case BALL_RESET:
                 if ((now - state_start) < pdMS_TO_TICKS(1000))
                 {
-                    GoMotorSend(&let_fly.motor, 0, 0, unitree_F, 3, 0.1f);
+                    GoMotorSend(&let_fly.motor, let_fly.exp_torque, 0, unitree_F, 3, 0.1f);
+									ret = GoMotorRecv(&let_fly.motor);
                 }
                 else
                 {
                     init_done  = 0;
                     ball_state = BALL_IDLE;
-                    GoMotorSend(&let_fly.motor, 0, 0, unitree_F, 0, 0);
+                    GoMotorSend(&let_fly.motor, let_fly.exp_torque, 0, unitree_F, 0, 0);
+									ret = GoMotorRecv(&let_fly.motor);
                 }
                 break;
 
@@ -180,7 +250,6 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t size)
 {
     if (huart->Instance == UART7)
     {
-        /* 校验蓝牙帧：0xAA [CMD] 0x55 */
         if (size >= 3 &&
             uart7_dma_buf[0]        == 0xAA &&
             uart7_dma_buf[size - 1] == 0x55)
@@ -215,7 +284,6 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
     }
     if (huart->Instance == UART7)
     {
-        /* UART7 出错后重新启动 DMA 接收，保证蓝牙通信不中断 */
         HAL_UARTEx_ReceiveToIdle_DMA(&huart7, uart7_dma_buf, sizeof(uart7_dma_buf));
         __HAL_DMA_DISABLE_IT(huart7.hdmarx, DMA_IT_HT);
     }
