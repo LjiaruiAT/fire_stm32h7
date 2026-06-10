@@ -108,6 +108,7 @@ uint8_t bt_cmd = 0;
 float test_angle = 0;
 void Task_Init(void)
 {
+	vTaskDelay(1000);
     RS485Init(&rs485bus, &huart2, NULL, NULL, dma1_send_buf, dma1_recv_buf);
 
     HAL_UARTEx_ReceiveToIdle_DMA(&huart7, uart7_dma_buf, sizeof(uart7_dma_buf));
